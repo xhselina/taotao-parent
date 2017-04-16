@@ -31,23 +31,23 @@ public class IndexController {
 
 	@RequestMapping("/index")
 	public String showIndex(Model model) {
-		//首页大广告为categoryId固定为89。
-		List<TbContent> list = contentService.getContentList(89);
-		List<Map> resultList = new ArrayList<>();
-		for (TbContent tbContent : list) {
-			Map item = new HashMap<>();
-			item.put("src", tbContent.getPic());
-			item.put("width", 670);
-			item.put("height", 240);
-			item.put("srcB", tbContent.getPic2());
-			item.put("widthB", 550);
-			item.put("heightB", 240);
-			item.put("href", tbContent.getUrl());
-			item.put("alt", tbContent.getTitle());
-			resultList.add(item);
-		}
-		String json = JsonUtils.objectToJson(resultList);
-		model.addAttribute("ad1", json);
+//		//首页大广告为categoryId固定为89。
+//		List<TbContent> list = contentService.getContentList(89);
+//		List<Map> resultList = new ArrayList<>();
+//		for (TbContent tbContent : list) {
+//			Map item = new HashMap<>();
+//			item.put("src", tbContent.getPic());
+//			item.put("width", 670);
+//			item.put("height", 240);
+//			item.put("srcB", tbContent.getPic2());
+//			item.put("widthB", 550);
+//			item.put("heightB", 240);
+//			item.put("href", tbContent.getUrl());
+//			item.put("alt", tbContent.getTitle());
+//			resultList.add(item);
+//		}
+//		String json = JsonUtils.objectToJson(resultList);
+//		model.addAttribute("ad1", json);
 		return "index";
 	}
 }
